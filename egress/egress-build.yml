@@ -1,0 +1,4 @@
+
+steps: 
+- script: echo Hello, world!
+  displayName: 'Egress Build/Test steps'
