@@ -1,20 +1,17 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# MICS 233 Privacy Engineering Implementation
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Deanonymization at Scale
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+We know that deanonymization of arbitrary datasets is possible.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+### Ingress
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://www.visualstudio.com/en-us/docs/git/create-a-readme). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Our ingress point is a lightweight data collection service.  It needs to suck up arbitrary amounts of data, ensure its formatted okay, and then stuff it into a drop location the Triage notebook can pick up.
+
+### Data Processing
+
+We need two notebooks minimum.  One is for analyzing the datasets and finding weaknesses.  The other is for performing attacks.  We may consider additionally having a notebook for data cleaning, and additional notebooks for targeting specific weaknesses (seperate diversity attacks, for instance).
+
+### Egress
+
+We need to output the data in some consumable format for manual analysis.  This should probably be SQL or csv for convenience sake, but it doesn't matter too much what we pick.  Whatever selection we make, we should add metadata to it.  We need to know what datasets a table was produced from at a minimum.  
