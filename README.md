@@ -9,9 +9,13 @@ We know that deanonymization of arbitrary datasets is possible.
 Our ingress point is a lightweight data collection service.  It needs to suck up arbitrary amounts of data, ensure its formatted okay, and then stuff it into a drop location the Triage notebook can pick up.
 
 [data.gov](https://www.data.gov/)
+
 [Internet Archive](https://archive.org/web/)
+
 [r/datasets](https://www.reddit.com/r/datasets/)
+
 [GoogleData](https://toolbox.google.com/datasetsearch)
+
 [BerkeleyData](https://dlab.berkeley.edu/data-resources/data)
 
 ### Data Processing
