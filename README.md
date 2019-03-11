@@ -25,3 +25,13 @@ We need two notebooks minimum.  One is for analyzing the datasets and finding we
 ### Egress
 
 We need to output the data in some consumable format for manual analysis.  This should probably be SQL or csv for convenience sake, but it doesn't matter too much what we pick.  Whatever selection we make, we should add metadata to it.  We need to know what datasets a table was produced from at a minimum.  
+
+### Milestones
+
+1. Data.gov scraper scraper complete
+1. K-anonymity notebook complete
+1. General graph output
+1. Basic Triage functionality
+1. More scrapers
+1. Generalization Triage functionality
+1. Pretty graphs
