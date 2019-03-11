@@ -30,9 +30,9 @@ We need to output the data in some consumable format for manual analysis.  This 
 
 1. Data.gov scraper scraper complete
 1. K-anonymity notebook complete
-1. Dataset deep dive
 1. General graph output
 1. Basic Triage functionality
+1. Dataset deep dive
 1. More scrapers
 1. Generalization Triage functionality
 1. Pretty graphs
