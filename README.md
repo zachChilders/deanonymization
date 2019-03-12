@@ -2,7 +2,13 @@
 
 ## Deanonymization at Scale
 
-We know that deanonymization of arbitrary datasets is possible.
+We are aware of multiple high profile papers in which allegedly anonymized datasets with lower $k$ values are deanonymized.  The process is very straightforward, consisting only of matching generalizations and performing 
+the equivalent of a SQL inner join.  
+
+Given the relative ease of attacking a dataset, we would like to design a system that automates deanonymization on a large scale.  This process consists of three primary stages that make up a typical big data pipeline:
+- Ingress, in which anonymous data is collected from various sources
+- Processing, in which data is selected and attacked
+- Egress, in which we prepare the identified data for additional processing and interpretation.
 
 ### Ingress
 
@@ -44,6 +50,8 @@ We intend to reuse the Postgres DB from the Ingress. We need to add some sort of
 1. More scrapers
 1. Generalization Triage functionality
 1. Pretty graphs
+
+### 
 
 ### Contributions
 
