@@ -18,7 +18,7 @@ Our ingress point is a lightweight data collection service.  It needs to suck up
 
 [BerkeleyData](https://dlab.berkeley.edu/data-resources/data)
 
-We would essentially set up a script that finds csv dumps of data on the web.  The scraper would download those csvs and create a postgresql table from the data.  It would then inform the indexer that the table has added and what type of data it is.  We will end up with many tables in the database.  Our deanonmyzing algorithm will then look through the tables and deanonymize certain data creating new tables.  
+We will set up a script that finds csv dumps of data on the web.  The scraper would download those csvs and create a postgresql table from the data.  It would then inform the indexer that the table has added and what type of data it is.  We will end up with many tables in the database.  Our deanonmyzing algorithm will then look through the tables and deanonymize certain data creating new tables.  
 
 ### Data Processing
 
