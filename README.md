@@ -51,7 +51,9 @@ We intend to reuse the Postgres DB from the Ingress. We need to add some sort of
 1. Generalization Triage functionality
 1. Pretty graphs
 
-### 
+### Previous Work
+
+There is a lot of supporting work in this area. The original $k$-anonymity paper, [Protecting Privacy when Disclosing Information: $k$-Anonymity and Its Enforcement through Generalization and Suppression](https://dataprivacylab.org/dataprivacy/projects/kanonymity/paper3.pdf) [Samarati, Sweeny]
 
 ### Contributions
 
