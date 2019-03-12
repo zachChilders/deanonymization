@@ -37,9 +37,6 @@ We need to output the data in some consumable format for manual analysis.  This 
 1. Generalization Triage functionality
 1. Pretty graphs
 
-1. i said shit son
-
-
 ### Contributions
 
  - Aaron will
