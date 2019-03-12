@@ -22,11 +22,17 @@ We will set up a script that finds csv dumps of data on the web.  The scraper wo
 
 ### Data Processing
 
-We need two notebooks minimum.  One is for analyzing the datasets and finding weaknesses.  The other is for performing attacks.  We may consider additionally having a notebook for data cleaning, and additional notebooks for targeting specific weaknesses (seperate diversity attacks, for instance).
+We would like to use Jupyter notebooks in light of having access to the MIDS instance.  We intend to implement them offline in R and then upload them to the cluster where they will have knowledge of the ingress.
+We need three notebooks minimum:
+- Triage for analyzing the datasets and finding weaknesses.
+- Generalization for attempting generalization matches.
+- Attack for actually performing joins and other deanons.
+
+We may consider additionally having a notebook for more serious data cleaning, and additional notebooks for targeting specific weaknesses (seperate diversity attacks, for instance).
 
 ### Egress
 
-We need to output the data in some consumable format for manual analysis.  This should probably be SQL or csv for convenience sake, but it doesn't matter too much what we pick.  Whatever selection we make, we should add metadata to it.  We need to know what datasets a table was produced from at a minimum.  
+We intend to reuse the Postgres DB from the Ingress. We need to add some sort of metadata, perhaps by table naming convention, in order to keep track of what attack was performed and with what datasets.
 
 ### Milestones
 
@@ -43,5 +49,5 @@ We need to output the data in some consumable format for manual analysis.  This 
 
  - Aaron will
  - Cameron will handle ingress & help with data deanon implementation
- - Zach will
+ - Zach will 
  
