@@ -60,16 +60,6 @@ We may consider additionally having a notebook for more serious data cleaning, a
 We intend to use another PostgreSQL DB for Egress. As datasets are reidentified, we will create tables in this DB along with a metadata table containing information about where the original data came from.  This metadata table can give us insights into what types datasets our Processor is able to best identify.  
 When combined with the Ingress metadata, we can hopefully tell a story about what types of data tends to be weak against simple join attacks and what types of data is adequately hardened.
 
-### Milestones
-
-1. Data.gov scraper scraper complete
-1. K-anonymity notebook complete
-1. General graph output
-1. Basic Triage functionality
-1. Dataset deep dive
-1. More scrapers
-1. Generalization Triage functionality
-1. Pretty graphs
 
 ### Previous Work
 
@@ -79,11 +69,28 @@ accurately reidentify many individuals.  One of the paper's authors, Sweeny, has
 Other similar work is [Robust De-anonymization of Large Datasets (How to Break Anonymity of the Netflix Prize Dataset)](https://arxiv.org/pdf/cs/0610105.pdf) [Narayanan, Shmatikov].  This paper addresses scale in the form of a large dataset, and successfully is able to recreate a large number of records meeting specific critieria.  Additionally, they leverage
 a scoring technique to assist their analysis and confidence of an identification.  
 
-To our knowledge, scale in terms of number of datasets deanonymized has yet to be addressed.  
+To our knowledge, scale in terms of number of datasets deanonymized has yet to be addressed.  In most previous work, data was carefully selected to produce reidentification. 
+
+### Feasibility
+
+Though the scope seems ambitious, we already have implemented many components in the form of a Lab or Homework question.
+In particular, we have matlab code available for both generalizations and de-anonymization.  The brunt of the effort will come from curating our data via automation and developing a scoring methodology to appropriately rank our results.
+Additionally, the first three proposed milestones alone should adequately meet the criteria for the project, allowing for room for growth and further work on the project.
 
 ### Contributions
 
- - Aaron will take lead on workbook implementation.
- - Cameron will handle ingress & help with data deanon implementation.
- - Zach will handle system design, engineering infrastructure and picking up slack in implementation.
+- Aaron will take lead on workbook implementation.
+- Cameron will handle ingress & help with data deanon implementation.
+- Zach will handle system design, engineering infrastructure and assist in any implementation needed.
+
+### Milestones
+
+1. Data.gov scraper scraper complete
+1. $K$-anonymity notebook complete
+1. General graph output, basic metrics identified (% success)
+1. Basic Triage functionality
+1. Scoring mechanism
+1. More scrapers
+1. Generalization based Triage functionality
+1. Pretty graphs, advanced metrics identified (data hotspots)
  
