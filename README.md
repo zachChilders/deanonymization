@@ -38,3 +38,10 @@ We need to output the data in some consumable format for manual analysis.  This 
 1. Pretty graphs
 
 1. i said shit son
+
+
+### Contributions
+
+1. Cameron will handle ingress & help with data deanon implementation
+1. Zach will
+1. Aaron will
