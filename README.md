@@ -56,6 +56,6 @@ We intend to reuse the Postgres DB from the Ingress. We need to add some sort of
 ### Contributions
 
  - Aaron will take lead on workbook implementation.
- - Cameron will handle ingress & help with data deanon implementation
- - Zach will 
+ - Cameron will handle ingress & help with data deanon implementation.
+ - Zach will handle system design and picking up slack in implementation.
  
