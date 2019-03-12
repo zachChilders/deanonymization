@@ -57,5 +57,5 @@ We intend to reuse the Postgres DB from the Ingress. We need to add some sort of
 
  - Aaron will take lead on workbook implementation.
  - Cameron will handle ingress & help with data deanon implementation.
- - Zach will handle system design and picking up slack in implementation.
+ - Zach will handle system design, engineering infrastructure and picking up slack in implementation.
  
