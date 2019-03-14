@@ -1,4 +1,8 @@
 
 steps: 
-- script: echo Hello, world!
-  displayName: 'Ingress Build/Test steps'
+- task: Docker@1
+  displayName: Build Ingress Application
+  inputs:
+    command: build
+    dockerfile: $(Build.SourcesDirectory)/ingress/dockerfile
+    imageName: Ingress:$(Build.BuildId)
