@@ -1,0 +1,9 @@
+FROM r-base
+
+RUN apt-get update && apt-get install libcurl4-openssl-dev libssl-dev -y
+
+RUN R -e 'install.packages("lintr")'
+
+ADD notebooks notebooks
+
+RUN cd notebooks; R -f validateScripts.r

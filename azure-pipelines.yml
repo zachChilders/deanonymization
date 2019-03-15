@@ -11,5 +11,5 @@ pool:
 
 steps:
 - template: ingress/ingress-build.yml
-- template: workbooks/workbooks-build.yml
+- template: processing/processor-build.yml
 - template: egress/egress-build.yml

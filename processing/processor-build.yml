@@ -1,0 +1,8 @@
+
+steps: 
+- task: Docker@1
+  displayName: Build Processing Application
+  inputs:
+    command: build
+    dockerfile: $(Build.SourcesDirectory)/processing/dockerfile
+    imageName: Processor:$(Build.BuildId)
