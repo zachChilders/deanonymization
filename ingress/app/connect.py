@@ -1,6 +1,9 @@
 # Remove this connection string
-import pymongo
-uri = "mongodb://ingress233:JjYA9g5njmSWgmvVaLvOTKXpoxs3yilbemxsk8RCmnPxSoSqyjlvUR7OMEzU00ldmDnUG0aVufi7AE3FAnIwyQ==@ingress233.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
-client = pymongo.MongoClient(uri)
+import postgres
+import os
 
-# PyMongo https://api.mongodb.com/python/current/
+connstring = os.environ["ingressconnectionstring"]
+
+client = postgres.Postgres(connstring)
+q = client.one("SELECT * FROM t1")
+print(q)
