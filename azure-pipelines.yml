@@ -10,6 +10,13 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- template: ingress/ingress-build.yml
-- template: processing/processor-build.yml
-- template: egress/egress-build.yml
+  - task: AzureKeyVault@1
+    displayName: Get Secrets
+    inputs:
+        azureSubscription: w233
+        keyVaultName: mics-kv
+        secretsFilter: '*'
+
+  - template: ingress/ingress-build.yml
+  - template: processing/processor-build.yml
+  - template: egress/egress-build.yml

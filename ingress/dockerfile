@@ -1,7 +1,10 @@
 FROM python
 
-RUN apt-get update && apt-get install pylint -y
+ARG ingressconnectionstring
+ENV ingressconnectionstring=$ingressconnectionstring
 
 ADD app app
+WORKDIR /app
 
-RUN cd app; pip install -r requirements.txt
+RUN pip install -r requirements.txt
+RUN pylint *.py

@@ -1,8 +1,9 @@
 
 steps: 
-- task: Docker@1
-  displayName: Build Ingress Application
-  inputs:
-    command: build
-    dockerfile: $(Build.SourcesDirectory)/ingress/dockerfile
-    imageName: Ingress:$(Build.BuildId)
+
+  - task: Bash@3
+    displayName: Build Ingress Container
+    inputs:
+        targetType: inline
+        script: docker build -t ingress:$(Build.BuildId) --build-arg ingressconnectionstring=$(ingressconnectionstring) .
+        workingDirectory: $(Build.SourcesDirectory)/ingress
