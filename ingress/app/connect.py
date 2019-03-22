@@ -1,6 +1,6 @@
 # Remove this connection string
-import postgres
 import os
+import postgres
 
 connstring = os.environ["ingressconnectionstring"]
 
