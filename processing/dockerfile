@@ -7,3 +7,14 @@ RUN R -e 'install.packages("lintr")'
 ADD notebooks notebooks
 
 RUN cd notebooks; R -f validateScripts.r
+
+FROM python
+
+ARG databrickstoken
+ARG databrickshost
+ENV databrickstoken=$databrickstoken
+ENV databrickshost=$databrickshost
+
+ADD notebooks notebooks
+
+RUN cd notebooks; pip install requests; python publishnotebooks.py
