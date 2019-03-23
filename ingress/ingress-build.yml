@@ -4,5 +4,5 @@ steps:
     displayName: Build Ingress Container
     inputs:
         targetType: inline
-        script: docker build -t ingress:$(Build.BuildId) --build-arg ingressconnectionstring=$(ingressconnectionstring) .
+        script: docker build -t ingress:$(Build.BuildId) --build-arg ingressconnectionstring=$(ingressconnectionstring) . -f ./dockerfile
         workingDirectory: $(Build.SourcesDirectory)/ingress
