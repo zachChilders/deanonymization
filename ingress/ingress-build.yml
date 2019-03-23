@@ -5,4 +5,4 @@ steps:
     inputs:
         targetType: inline
         script: docker build --build-arg databrickstoken=$(databrickstoken) --build-arg databrickshost=$(databrickshost) . --file="./dockerfile"
-        workingDirectory: $(Build.SourcesDirectory)/processing
+        workingDirectory: $(Build.SourcesDirectory)/ingress
