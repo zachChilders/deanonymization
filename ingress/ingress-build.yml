@@ -4,5 +4,5 @@ steps:
     displayName: Validate & Build Ingress
     inputs:
         targetType: inline
-        script: docker build . --file="./dockerfile"
+        script: docker build --file="./dockerfile" --build-arg ingressconnectionstring=$(ingressconnectionstring) . 
         workingDirectory: $(Build.SourcesDirectory)/ingress
