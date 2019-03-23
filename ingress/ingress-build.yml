@@ -1,8 +1,8 @@
 
 steps: 
   - task: Bash@3
-    displayName: Build Ingress Container
+    displayName: Validate & Publish Processor
     inputs:
         targetType: inline
-        script: docker build -t ingress:$(Build.BuildId) --build-arg ingressconnectionstring=$(ingressconnectionstring) . --file="./dockerfile" 
-        workingDirectory: $(Build.SourcesDirectory)/ingress
+        script: docker build --build-arg databrickstoken=$(databrickstoken) --build-arg databrickshost=$(databrickshost) . --file="./dockerfile"
+        workingDirectory: $(Build.SourcesDirectory)/processing
