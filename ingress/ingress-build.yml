@@ -1,11 +1,4 @@
-
-steps: 
-  # - task: Bash@3
-  #   displayName: Validate & Build Ingress
-  #   inputs:
-  #       targetType: inline
-  #       script: docker build --file="./dockerfile" --build-arg ingressconnectionstring=$(ingressconnectionstring) ./
-  #       workingDirectory: $(Build.SourcesDirectory)/ingress
+steps:
   - task: Docker@1
     displayName: Validate & Build Ingress
     inputs:
