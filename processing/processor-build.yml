@@ -1,9 +1,9 @@
 
-steps: 
-  - task: Bash@3
-    displayName: Validate & Publish Processor
+steps:
+  - task: Docker@1
+    displayName: Validate & Build Processor
     inputs:
-        targetType: inline
-        script: docker build --build-arg databrickstoken=$(databrickstoken) --build-arg databrickshost=$(databrickshost) .
-        workingDirectory: $(Build.SourcesDirectory)/processing
-
+      command: build
+      dockerfile: $(Build.SourcesDirectory)/processing/dockerfile
+      buildConext: $(Build.SourcesDirectory)/processing
+      arguments: --build-arg databrickstoken=$(databrickstoken) --build-arg databrickshost=$(databrickshost)

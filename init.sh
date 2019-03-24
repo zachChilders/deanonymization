@@ -10,6 +10,5 @@ SECRETS=( $(az keyvault secret list --vault-name $KEYVAULTNAME | jq '.[].id' -r 
 for NAME in ${SECRETS[@]}; do
     SECRET=$(az keyvault secret show --name $NAME --vault-name $KEYVAULTNAME | jq '.value' -r)
     echo $NAME
-    echo $SECRET
     export $NAME=$SECRET
 done
