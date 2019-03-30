@@ -1,0 +1,5 @@
+postgres
+pylint
+requests 
+psycopg2
+selenium

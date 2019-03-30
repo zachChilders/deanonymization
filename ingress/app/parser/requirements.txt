@@ -1,0 +1,4 @@
+postgres
+pylint
+requests
+psycopg2

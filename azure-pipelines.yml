@@ -9,6 +9,10 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
 
+variables:
+    azureSubscriptionEndpoint: w233
+    azureContainerRegistry: mics233.azurecr.io
+
 steps:
   - task: AzureKeyVault@1
     displayName: Get Secrets
@@ -17,6 +21,13 @@ steps:
         keyVaultName: mics-kv
         secretsFilter: '*'
 
+  - task: Docker@1
+    displayName: Docker Login
+    inputs: 
+        command: login
+        azureContainerRegistry: $(azureContainerRegistry)
+        azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+
   - template: ingress/ingress-build.yml
-  - template: processing/processor-build.yml
+#  - template: processing/processor-build.yml
   - template: egress/egress-build.yml

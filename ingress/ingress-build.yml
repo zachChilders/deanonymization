@@ -1,8 +1,32 @@
 steps:
   - task: Docker@1
-    displayName: Validate & Build Ingress
+    displayName: Validate & Build Parser
     inputs:
       command: build
-      dockerfile: $(Build.SourcesDirectory)/ingress/dockerfile
-      buildConext: $(Build.SourcesDirectory)/ingress
-      arguments: --build-arg ingressconnectionstring=$(ingressconnectionstring)
+      dockerfile: $(Build.SourcesDirectory)/ingress/parser.dockerfile
+      buildContext: $(Build.SourcesDirectory)/ingress/parser
+      arguments: --build-arg ingressconnectionstring=$(ingressconnectionstring) -t mics233.azurecr.io/ingress-parser:$(Build.BuildId)
+
+  - task: Docker@1
+    displayName: Validate & Build Scraper
+    inputs:
+      command: build
+      dockerfile: $(Build.SourcesDirectory)/ingress/scraper.dockerfile
+      buildContext: $(Build.SourcesDirectory)/ingress/scraper
+      arguments: --build-arg ingressconnectionstring=$(ingressconnectionstring) -t mics233.azurecr.io/ingress-scraper:$(Build.BuildId)
+
+  - task: Docker@1
+    displayName: Push Parser
+    inputs:
+      command: push
+      azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+      azureContainerRegistry: $(azureContainerRegistry)
+      imageName: mics233.azurecr.io/ingress-parser:$(Build.BuildId)
+
+  - task: Docker@1
+    displayName: Push Scraper
+    inputs:
+      command: push
+      azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+      azureContainerRegistry: $(azureContainerRegistry)
+      imageName: mics233.azurecr.io/ingress-scraper:$(Build.BuildId)
