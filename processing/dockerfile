@@ -2,7 +2,7 @@ FROM mics233.azurecr.io/rbase
 
 ADD notebooks notebooks
 
-RUN cd notebooks; R -f validateScripts.r
+RUN cd notebooks; Rscript validateScripts.r
 
 FROM python
 
