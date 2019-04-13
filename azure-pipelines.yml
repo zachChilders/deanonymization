@@ -29,5 +29,5 @@ steps:
         azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
 
   - template: ingress/ingress-build.yml
-#  - template: processing/processor-build.yml
+  - template: processing/processor-build.yml
   - template: egress/egress-build.yml

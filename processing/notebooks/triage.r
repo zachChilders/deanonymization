@@ -1,3 +1,8 @@
-# Implement the triage notebook here
-print('Hello World')
+#Bootstrap deanonymize library
+library('devtools')
+if (!require('deanonymizeR')) {
+    install_github('zachChilders/deanonymizeR')
+    library('deanonymizeR')
+}
 
+index <- getTable('tables_index')

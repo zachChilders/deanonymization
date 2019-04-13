@@ -1,8 +1,4 @@
-FROM r-base
-
-RUN apt-get update && apt-get install libcurl4-openssl-dev libssl-dev -y
-
-RUN R -e 'install.packages("lintr")'
+FROM mics233.azurecr.io/rbase
 
 ADD notebooks notebooks
 
