@@ -1,9 +1,33 @@
 minimumKValue <- 4 # This needs to be tuned.
 
 # K-anonymity function to triage tables
-# TODO: write this
-Kanon <- function(table) {
-  5
+# TODO we are going to need qID to delcare equivalence classes
+Kanon <- function(table, qID) {
+
+  # get equivalence classes
+  # table with just ec columns
+  ec_cols <- table[,qID]
+
+  # get equivalence classes
+  ec <- unique(ec_cols)
+
+  # set k
+  k <- -1
+
+  for (eq_id in 1:nrow(ec)) {
+    count <- 0
+    for (i in 1:nrow(table)) {
+      if (table[i,qID] == ec[eq_id,]) {
+        count <- count + 1
+      }
+    }
+
+    if (count < k) {
+      k <- count
+    }
+  }
+
+  return k
 }
 
 #Bootstrap deanonymize library
@@ -34,5 +58,5 @@ if (result > minimumKValue) {
 }
 
 # Set 
-setTable(randomTable$id, state)
+# setTable(tableRowToTriage, state)   // uncomment later, when zach says its ok
 
