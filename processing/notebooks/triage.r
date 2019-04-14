@@ -3,7 +3,7 @@ minimumKValue <- 4 # This needs to be tuned.
 # K-anonymity function to triage tables
 # TODO: write this
 Kanon <- function(table) {
-    5
+  5
 }
 
 #Bootstrap deanonymize library
@@ -13,15 +13,16 @@ if (!require('deanonymizeR')) {
     library('deanonymizeR')
 }
 
-# Get metadata table
+# Select all tables in desiredState
 index <- getTable('tables_index')
+cleanIndex <- index[complete.cases(index$table_name),]
+candidateTables <- subset(cleanIndex, state == stats$S)
 
-# Select ready for triage
-scraped <- subset(index, state == states$SCRAPESUCCESS)
+# Select random candidate table
+randomTable <- candidateTables[sample(nrow(candidateTables), 1),]
+tableRowToTriage <- randomTable$table_name
 
-# Select table
-triage <- scraped[complete.cases(scraped$table_name),][1,]
-tableRowToTriage <- triage$table_name
+#Pull that table
 table <- getTable(tableRowToTriage)
 
 # Run K-anon or something
@@ -33,5 +34,5 @@ if (result > minimumKValue) {
 }
 
 # Set 
-setTable(tableRowToTriage, state)
+setTable(randomTable$id, state)
 
