@@ -2,7 +2,7 @@
 
 ## Group Members
 
-Aaron, Cameron, Zach
+Aaron Crouch, Cameron Clifford, Zach Childers
 
 ## Deanonymization at Scale
 
