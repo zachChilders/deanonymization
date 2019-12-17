@@ -6,7 +6,7 @@ Aaron, Cameron, Zach
 
 ## Deanonymization at Scale
 
-![Deanonymization Pipeline](res\DeanonymizePipeline.png)
+![Deanonymization Pipeline](res/DeanonymizePipeline.png)
 
 We are aware of multiple high profile papers in which allegedly anonymized datasets with lower $k$ values are deanonymized.  The process is very straightforward, consisting only of matching generalizations of two tables and performing
 the equivalent of a SQL inner join.  
